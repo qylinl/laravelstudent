@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
 
 class StudentsController extends Controller
 {
@@ -34,7 +35,16 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = new Student;
+        $student->nama = "Luna";
+        $student->nis = 123465;
+        $student->jenis_kelamin = "p";
+        $student->alamat = "TPL";
+        $student->email = "luna@gmail.com";
+
+        $student->save();
+
+        return $student;
     }
 
     /**

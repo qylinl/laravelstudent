@@ -15,17 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/create/student', function(){
-    $student = \App\Student::create([
-        'nama' => 'Qylin',
-        'nis' => 13342,
-        'jenis_kelamin' => 'P',
-        'alamat' => 'tpl',
-        'email' => 'qylin@gmail.com',
-        'remember_token' => \Str::random(60)
-    ]);
+Route::get('/create/student', 'StudentsController@store');
 
-    return $student;
-});
+// Route::get('/create/student', function(){
+//     $student = \App\Student::create([
+//         'nama' => 'Qylin',
+//         'nis' => 13342,
+//         'jenis_kelamin' => 'P',
+//         'alamat' => 'tpl',
+//         'email' => 'qylin@gmail.com',
+//         'remember_token' => \Str::random(60)
+//     ]);
+
+//     return $student;
+// });
  
 //halo belajar git
